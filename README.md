@@ -227,7 +227,7 @@ SUPABASE_USER = "postgres.{project_id}"  # project_id included in username
 ## Author
 
 **Henryk Raskovisch**
-- [LinkedIn](https://www.linkedin.com/in/henryk-raskovisch)
+- [LinkedIn](https://www.linkedin.com/in/henrykraskovisch/)
 - [GitHub](https://github.com/henryk-raskovisch)
 
 ---
