@@ -1,0 +1,12 @@
+# Power BI
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Environment variables
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1172.1722105431791,
+            "y": 576.10151945724476
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "113d939f-8b8d-4457-adb0-52024229414a",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 336.60491092856626,
+            "y": 303.70100022729196
+          },
+          "nodeIndex": "Dim_calendar",
+          "nodeLineageTag": "9739e2a9-61d4-4985-8fb2-e1f1276e90d6",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 304.0129167313994
+          },
+          "nodeIndex": "mart_delivery",
+          "nodeLineageTag": "bfb19a28-f383-46e6-8abc-c3416386e229",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 535.42981637238449,
+            "y": 653.37337491448943
+          },
+          "nodeIndex": "mart_sales",
+          "nodeLineageTag": "f6c27483-71a8-428e-b9dc-ae5bc21efd0b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 652.95088954317907,
+            "y": 299.57731717665666
+          },
+          "nodeIndex": "mart_satisfaction",
+          "nodeLineageTag": "9b80b6a7-fee4-4d7c-b28e-de657745480d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 183.60778606611439,
+            "y": -50
+          },
+          "nodeIndex": "mart_seller_performance",
+          "nodeLineageTag": "63e6815d-11d1-4dde-833d-b9af25abac32",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1170.9508895431791,
+            "y": 449.68668745724472
+          },
+          "nodeIndex": "Agora",
+          "nodeLineageTag": "6830c13e-e4bf-45cc-9799-98b6868d4b33",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 56.447393005377734,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

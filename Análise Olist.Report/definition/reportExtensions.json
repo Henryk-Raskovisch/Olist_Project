@@ -1,0 +1,131 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Medidas",
+      "measures": [
+        {
+          "name": "TXT Periodo filtrado",
+          "dataType": "Double",
+          "expression": "\nIF(\n    HASONEVALUE(Dim_Calendar[Ano]),\n    \"Período Filtrado: \" & MAX(Dim_Calendar[Ano]),\n    \"Período Filtrado: \" & MIN(Dim_Calendar[Ano]) & \" - \" & MAX(Dim_Calendar[Ano])\n)",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Atualizado em",
+          "dataType": "Double",
+          "expression": "\nVAR _DataHora =\n    MAX (Agora[DataHoraAtualizacao])\nRETURN\n    \"Atualizado em: \"\n        & FORMAT (_DataHora, \"dd/MM/yyyy HH:mm:ss\")",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Frete Pct GMV",
+          "dataType": "Double",
+          "expression": "\nDIVIDE(\n    SUM(mart_sales[total_freight_revenue]),\n    SUM(mart_sales[total_gmv])\n)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %"
+        },
+        {
+          "name": "Parcelas Medias",
+          "dataType": "Double",
+          "expression": "AVERAGE(mart_sales[avg_installments])",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Clientes Unicos",
+          "dataType": "Double",
+          "expression": "SUM(mart_sales[unique_customers])",
+          "formatString": "General Number"
+        },
+        {
+          "name": "GMV MoM",
+          "dataType": "Double",
+          "expression": "\nVAR GMVAtual = SUM(mart_sales[total_gmv])\nVAR GMVMesAnterior = \n    CALCULATE(\n        SUM(mart_sales[total_gmv]),\n        DATEADD(Dim_calendar[Data], -1, MONTH)\n    )\nRETURN\nDIVIDE(GMVAtual - GMVMesAnterior, GMVMesAnterior)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %"
+        },
+        {
+          "name": "Lead Time Medio",
+          "dataType": "Double",
+          "expression": "AVERAGE(mart_delivery[delivery_time_days])",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Atraso Medio",
+          "dataType": "Double",
+          "expression": "AVERAGE(mart_delivery[delay_days])",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Pedidos Entregues",
+          "dataType": "Double",
+          "expression": "COUNTROWS(mart_delivery)",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Pct Promotores",
+          "dataType": "Double",
+          "expression": "\nDIVIDE(\n    COUNTROWS(FILTER(mart_satisfaction, mart_satisfaction[nps_category] = \"promoter\")),\n    COUNTROWS(mart_satisfaction)\n)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %"
+        },
+        {
+          "name": "Pct Detratores",
+          "dataType": "Double",
+          "expression": "\nDIVIDE(\n    COUNTROWS(FILTER(mart_satisfaction, mart_satisfaction[nps_category] = \"detractor\")),\n    COUNTROWS(mart_satisfaction)\n)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %"
+        },
+        {
+          "name": "Total Reviews",
+          "dataType": "Double",
+          "expression": "COUNTROWS(mart_satisfaction)",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Score Medio Reviews Num",
+          "dataType": "Double",
+          "expression": "AVERAGE(mart_satisfaction[review_score])",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Total Sellers",
+          "dataType": "Double",
+          "expression": "DISTINCTCOUNT(mart_seller_performance[seller_id])",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Sellers Criticos",
+          "dataType": "Double",
+          "expression": "\nCALCULATE(\n    DISTINCTCOUNT(mart_seller_performance[seller_id]),\n    mart_seller_performance[seller_tier] = \"Critico\"\n)",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Receita Media Seller",
+          "dataType": "Double",
+          "expression": "\nDIVIDE(\n    SUM(mart_seller_performance[total_revenue]),\n    DISTINCTCOUNT(mart_seller_performance[seller_id])\n)",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Atraso Medio Sellers",
+          "dataType": "Double",
+          "expression": "AVERAGE(mart_seller_performance[avg_delay_days])",
+          "formatString": "General Number"
+        },
+        {
+          "name": "On Time Rate Sellers",
+          "dataType": "Double",
+          "expression": "AVERAGE(mart_seller_performance[on_time_rate])",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %"
+        },
+        {
+          "name": "Receita Total Sellers",
+          "dataType": "Double",
+          "expression": "SUM(mart_seller_performance[total_revenue])",
+          "formatString": "#,0.00"
+        },
+        {
+          "name": "Score Medio Sellers",
+          "dataType": "Double",
+          "expression": "AVERAGE(mart_seller_performance[avg_review_score])",
+          "formatString": "#,0.00"
+        }
+      ]
+    }
+  ]
+}

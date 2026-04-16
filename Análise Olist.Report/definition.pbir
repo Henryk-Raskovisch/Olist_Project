@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+  "version": "4.0",
+  "datasetReference": {
+    "byConnection": {
+      "connectionString": "Data Source=powerbi://api.powerbi.com/v1.0/myorg/olist-medallion;initial catalog=sm_olist;access mode=readonly;integrated security=ClaimsToken;semanticmodelid=4d13f15a-b69d-4d95-9afd-cf95f5b6de4d"
+    }
+  }
+}
